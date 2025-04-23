@@ -11,11 +11,21 @@ struct RecipeListView: View {
     @ObservedObject var vm = ListViewModel()
     var body: some View {
         NavigationStack {
-            Text("Hello world")
+            if vm.isLoading {
+                ProgressView()
+            } else if vm.hasErrorMessage != nil {
+                Text("\(vm.hasErrorMessage ?? "Oops something went wrong please check back later")")
+            } else {
+                List {
+                    ForEach(vm.recipeList, id: \.id) { recipe in
+                        Text(recipe.name)
+                    }
+                }
+            }
         }
-        .task {
-            try? await vm.getRecipeList()
-        }
+            .task {
+                try? await vm.getRecipeList()
+            }
     }
     // Set
 }

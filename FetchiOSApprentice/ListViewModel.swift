@@ -10,18 +10,31 @@ import Foundation
 @MainActor
 class ListViewModel: ObservableObject {
     @Published var recipeList: [Recipe] = []
+    @Published var isLoading: Bool = true
+    @Published var hasErrorMessage: String?
     
     func getRecipeList() async throws {
+        isLoading = true
         let stringURL = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json"
-        guard let url = URL(string: stringURL) else { throw NetworkError.invalidURL }
+        guard let url = URL(string: stringURL) else {
+            isLoading = false
+            hasErrorMessage = "There is something wrong 😑 \n Please come back later"
+            throw NetworkError.invalidURL
+        }
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-        // TODO: Make response and error out correctly
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard let res = response as? HTTPURLResponse,
+                  (200...299).contains(res.statusCode) else {
+                throw NetworkError.decodingDataError
+            }
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .useDefaultKeys
             let result = try decoder.decode(RecipeResponse.self, from: data)
-            print("\(result.recipes.count)")
-        } catch {
+            recipeList = result.recipes
+            isLoading = false
+            hasErrorMessage = nil
+        } catch(let error) {
+            hasErrorMessage = error.localizedDescription
             throw NetworkError.decodingDataError
         }
         
