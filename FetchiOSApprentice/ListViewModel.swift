@@ -25,6 +25,7 @@ class ListViewModel: ObservableObject {
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let res = response as? HTTPURLResponse,
                   (200...299).contains(res.statusCode) else {
+                hasErrorMessage = "Something happened"
                 throw NetworkError.decodingDataError
             }
             let decoder = JSONDecoder()
@@ -32,9 +33,10 @@ class ListViewModel: ObservableObject {
             let result = try decoder.decode(RecipeResponse.self, from: data)
             recipeList = result.recipes
             isLoading = false
-            hasErrorMessage = nil
+            hasErrorMessage = recipeList.isEmpty ? "This is not the recipe list you are looking for" : nil
         } catch(let error) {
             hasErrorMessage = error.localizedDescription
+            isLoading = false
             throw NetworkError.decodingDataError
         }
         

@@ -18,16 +18,19 @@ struct RecipeListView: View {
             } else {
                 List {
                     ForEach(vm.recipeList, id: \.id) { recipe in
-                        Text(recipe.name)
+                        ListCellView(imageURL: recipe.photoUrlSmall ??
+                                     "", name: recipe.name, cuisine: recipe.cuisine)
+                        .onTapGesture {
+                            print("\(recipe.name)")
+                        }
                     }
                 }
             }
         }
-            .task {
-                try? await vm.getRecipeList()
-            }
+        .task {
+            try? await vm.getRecipeList()
+        }
     }
-    // Set
 }
 
 #Preview {
