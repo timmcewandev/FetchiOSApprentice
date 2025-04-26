@@ -6,19 +6,55 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		845AFCE52DBC610C005561FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84EFE5A02DB9793900D0CF14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84EFE5A72DB9793900D0CF14;
+			remoteInfo = FetchiOSApprentice;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		845AFCE12DBC610C005561FF /* FetchiOSApprenticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchiOSApprenticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EFE5A82DB9793900D0CF14 /* FetchiOSApprentice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchiOSApprentice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		845AFCDC2DBC5E3D005561FF /* Exceptions for "FetchiOSApprentice" folder in "FetchiOSApprentice" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 84EFE5A72DB9793900D0CF14 /* FetchiOSApprentice */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		845AFCE22DBC610C005561FF /* FetchiOSApprenticeTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FetchiOSApprenticeTests;
+			sourceTree = "<group>";
+		};
 		84EFE5AA2DB9793900D0CF14 /* FetchiOSApprentice */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				845AFCDC2DBC5E3D005561FF /* Exceptions for "FetchiOSApprentice" folder in "FetchiOSApprentice" target */,
+			);
 			path = FetchiOSApprentice;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		845AFCDE2DBC610C005561FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84EFE5A52DB9793900D0CF14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				84EFE5AA2DB9793900D0CF14 /* FetchiOSApprentice */,
+				845AFCE22DBC610C005561FF /* FetchiOSApprenticeTests */,
 				84EFE5A92DB9793900D0CF14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				84EFE5A82DB9793900D0CF14 /* FetchiOSApprentice.app */,
+				845AFCE12DBC610C005561FF /* FetchiOSApprenticeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		845AFCE02DBC610C005561FF /* FetchiOSApprenticeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845AFCE72DBC610C005561FF /* Build configuration list for PBXNativeTarget "FetchiOSApprenticeTests" */;
+			buildPhases = (
+				845AFCDD2DBC610C005561FF /* Sources */,
+				845AFCDE2DBC610C005561FF /* Frameworks */,
+				845AFCDF2DBC610C005561FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				845AFCE62DBC610C005561FF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				845AFCE22DBC610C005561FF /* FetchiOSApprenticeTests */,
+			);
+			name = FetchiOSApprenticeTests;
+			packageProductDependencies = (
+			);
+			productName = FetchiOSApprenticeTests;
+			productReference = 845AFCE12DBC610C005561FF /* FetchiOSApprenticeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		84EFE5A72DB9793900D0CF14 /* FetchiOSApprentice */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84EFE5B32DB9793B00D0CF14 /* Build configuration list for PBXNativeTarget "FetchiOSApprentice" */;
@@ -80,6 +141,10 @@
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					845AFCE02DBC610C005561FF = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 84EFE5A72DB9793900D0CF14;
+					};
 					84EFE5A72DB9793900D0CF14 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -100,11 +165,19 @@
 			projectRoot = "";
 			targets = (
 				84EFE5A72DB9793900D0CF14 /* FetchiOSApprentice */,
+				845AFCE02DBC610C005561FF /* FetchiOSApprenticeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		845AFCDF2DBC610C005561FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84EFE5A62DB9793900D0CF14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +188,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		845AFCDD2DBC610C005561FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84EFE5A42DB9793900D0CF14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +204,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		845AFCE62DBC610C005561FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84EFE5A72DB9793900D0CF14 /* FetchiOSApprentice */;
+			targetProxy = 845AFCE52DBC610C005561FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		845AFCE82DBC610C005561FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A9UMG393DW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcewanintech.FetchiOSApprenticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchiOSApprentice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FetchiOSApprentice";
+			};
+			name = Debug;
+		};
+		845AFCE92DBC610C005561FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A9UMG393DW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcewanintech.FetchiOSApprenticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchiOSApprentice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FetchiOSApprentice";
+			};
+			name = Release;
+		};
 		84EFE5B12DB9793B00D0CF14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -256,6 +380,7 @@
 				DEVELOPMENT_TEAM = A9UMG393DW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FetchiOSApprentice/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -285,6 +410,7 @@
 				DEVELOPMENT_TEAM = A9UMG393DW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FetchiOSApprentice/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -307,6 +433,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		845AFCE72DBC610C005561FF /* Build configuration list for PBXNativeTarget "FetchiOSApprenticeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845AFCE82DBC610C005561FF /* Debug */,
+				845AFCE92DBC610C005561FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84EFE5A32DB9793900D0CF14 /* Build configuration list for PBXProject "FetchiOSApprentice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

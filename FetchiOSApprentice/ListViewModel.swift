@@ -13,37 +13,33 @@ class ListViewModel: ObservableObject {
     @Published var isLoading: Bool = true
     @Published var hasErrorMessage: String?
     
+    let networkService: NetworkServiceProtocol
+    
+    init(networkService: NetworkServiceProtocol = NetworkService()) {
+        self.networkService = networkService
+    }
+    
     func getRecipeList() async throws {
         isLoading = true
-        let stringURL = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json"
-        guard let url = URL(string: stringURL) else {
-            isLoading = false
-            hasErrorMessage = "There is something wrong 😑 \n Please come back later"
-            throw NetworkError.invalidURL
-        }
+
         do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            guard let res = response as? HTTPURLResponse,
-                  (200...299).contains(res.statusCode) else {
-                hasErrorMessage = "Something happened"
-                throw NetworkError.decodingDataError
-            }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .useDefaultKeys
-            let result = try decoder.decode(RecipeResponse.self, from: data)
-            recipeList = result.recipes
+            recipeList = try await networkService.getRecipeList()
             isLoading = false
-            hasErrorMessage = recipeList.isEmpty ? "This is not the recipe list you are looking for" : nil
-        } catch(let error) {
-            hasErrorMessage = error.localizedDescription
+        } catch {
             isLoading = false
-            throw NetworkError.decodingDataError
+            hasErrorMessage = NetworkError.decodingDataError.description
         }
-        
     }
 }
 
 enum NetworkError: Error {
     case invalidURL
     case decodingDataError
+    
+    var description: String {
+        switch self {
+        case .invalidURL, .decodingDataError:
+            "Please try again later"
+        }
+    }
 }
