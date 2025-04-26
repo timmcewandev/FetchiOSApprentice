@@ -31,7 +31,6 @@ final class FetchiOSApprenticeTests: XCTestCase {
     var sut: ListViewModel!
     var mockNetworkService: NetworkServiceMock!
     
-    
     override func setUpWithError() throws {
         mockNetworkService = NetworkServiceMock()
         sut = ListViewModel(networkService: mockNetworkService)
