@@ -25,9 +25,10 @@ class ListViewModel: ObservableObject {
         do {
             recipeList = try await networkService.getRecipeList()
             isLoading = false
-        } catch {
+            hasErrorMessage = recipeList.isEmpty ? "Empty List" : nil
+        } catch(let error) {
             isLoading = false
-            hasErrorMessage = NetworkError.decodingDataError.description
+            hasErrorMessage = NetworkError.unknown(error).description
         }
     }
 }
@@ -35,11 +36,14 @@ class ListViewModel: ObservableObject {
 enum NetworkError: Error {
     case invalidURL
     case decodingDataError
+    case unknown(Error)
     
     var description: String {
         switch self {
         case .invalidURL, .decodingDataError:
             "Please try again later"
+        case .unknown(let error):
+            error.localizedDescription
         }
     }
 }

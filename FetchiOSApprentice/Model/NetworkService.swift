@@ -22,8 +22,8 @@ class NetworkService: NetworkServiceProtocol {
             decoder.keyDecodingStrategy = .useDefaultKeys
             let result = try decoder.decode(RecipeResponse.self, from: data)
             return result.recipes
-        } catch {
-            throw  NetworkError.decodingDataError
+        } catch(let error as NetworkError) {
+            throw  NetworkError.unknown(error)
         }
     }
     
