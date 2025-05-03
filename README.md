@@ -15,7 +15,7 @@ I initially focused on getting everything working. However, I soon realized I ne
 protocols to integrate into my ViewModel. This did take a little more time, but implementing this made my networking and testing much cleaner.
 
 ### Weakest Part of the Project: What do you think is the weakest part of your project?
-My initial view was not very polished, but I think I did get a good start on it.
+My initial view was not very polished
 
 ### Additional Information: Is there anything else we should know? Feel free to share any insights or constraints you encountered.
 I am very excited about this opportunity to work with Fetch.
